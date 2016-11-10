@@ -1,0 +1,9 @@
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList
+
+
+@if (Model.PageCount > 1) { 
+@Html.PagedListPager(Model,
+       page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort }))
+}
+
